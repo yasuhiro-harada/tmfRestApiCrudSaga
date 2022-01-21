@@ -1,0 +1,54 @@
+
+# HTTP Listen Port
+server.port=80
+
+# Time Setting
+spring.jackson.date-format=yyyy-MM-dd' 'HH:mm:ss
+spring.jackson.time-zone=Asia/Tokyo
+
+# Redolog Redis
+spring.redis.redolog.host=redisContainer
+spring.redis.redolog.port=6379
+spring.redis.redolog.user=
+spring.redis.redolog.password=
+spring.redis.redolog.database=0
+
+# Lock Redis
+spring.redis.lock.host=redisContainer
+spring.redis.lock.port=6379
+spring.redis.lock.user=
+spring.redis.lock.password=
+spring.redis.lock.database=1
+
+# RDBMS Database
+rdbms.databaseproduct=postgres
+rdbms.dataSourceName=jdbc:postgresql://postgresContainer:5432/postgres
+rdbms.user=postgres
+rdbms.password=mysecretpassword
+rdbms.initialPoolSize=5
+rdbms.minPoolSize=5
+rdbms.maxPoolSize=20
+rdbms.timeoutCheckInterval=5
+rdbms.inactiveConnectionTimeout=10
+# Two Phase Commit Method none/saga/tcc
+rdbms.twoPhaseCommitMethod=saga
+# Controller Method web/message
+controller.controllerMethod=web
+
+# Kafka Consumer
+spring.kafka.consumer.bootstrap-servers=localhost:9092
+spring.kafka.consumer.group-id=my-consumer
+spring.kafka.consumer.auto-offset-reset=earliest
+spring.kafka.consumer.topic=consumer
+spring.kafka.consumer.timeout=1000
+spring.kafka.consumer.frequency=10
+
+# Kafka Producer
+spring.kafka.producer.bootstrap-servers=localhost:9092
+spring.kafka.producer.topic=producer
+
+# create spring batch metadata
+spring.batch.initialize-schema=always
+
+# rdbms before test keep/delete
+spring.test.database.data.before-test=keep
